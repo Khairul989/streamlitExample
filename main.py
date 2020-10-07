@@ -10,11 +10,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 
-st.header("By: Kerol")
-st.title("Auto prediction for KNN, SVM, Random Forest")
+st.header("By: Muhammad Khairul Azhar")
+st.title("Automatic prediction for KNN, SVM, Random Forest")
 
 st.write("""
-Selecting the best classifier
+A sample for selecting best classifier for various imported datasets
 """)
 
 dataset_name = st.sidebar.selectbox("Select Dataset", ("Iris", "Breast Cancer","Wine Dataset"))
@@ -73,7 +73,7 @@ y_pred = clf.predict(X_test)
 
 acc = accuracy_score(y_test, y_pred)
 st.write(f"classifier = {cl_name}")
-st.write(f"Accuracy = {acc}")
+st.write(f"Accuracy = {acc:.2f}%")
 
 ##plotting
 pca = PCA(2)
@@ -84,8 +84,8 @@ x2 = X_projected[:, 1]
 
 fig = plt.figure()
 plt.scatter(x1, x2, c=y, alpha=0.8, cmap="viridis")
-plt.xlabel("Principal Component 1")
-plt.ylabel("Principle Component 2")
+plt.xlabel("First component")
+plt.ylabel("Second component")
 plt.colorbar()
 
 st.pyplot()
